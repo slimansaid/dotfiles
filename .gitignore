@@ -1,0 +1,38 @@
+# Ignore system files
+.DS_Store
+Thumbs.db
+
+# Ignore temporary files
+*.swp
+*.swo
+*.tmp
+*.bak
+*.old
+
+# Ignore editor-specific files
+.vscode/
+.idea/
+*.code-workspace
+
+# Ignore logs and caches
+*.log
+*.cache
+*.pid
+
+# Ignore shell history and sensitive files
+.bash_history
+.zsh_history
+*.env
+*.secrets
+
+# Ignore compiled files
+*.pyc
+*.o
+*.out
+*.class
+
+# Ignore node_modules (if applicable)
+node_modules/
+
+# Ignore other unnecessary files
+tags
