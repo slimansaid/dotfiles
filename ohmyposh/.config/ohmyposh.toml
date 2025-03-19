@@ -1,0 +1,152 @@
+console_title_template = '{{ .Shell }} in {{ .Folder }}'
+version = 3
+final_space = true
+enable_cursor_positioning = true
+
+[upgrade]
+notice = true
+interval = "168h"
+auto = false
+source = "cdn"
+
+[palette]
+rosewater = "#f5e0dc"
+flamingo = "#f2cdcd"
+pink = "#f5c2e7"
+mauve = "#cba6f7"
+red = "#f38ba8"
+maroon = "#eba0ac"
+peach = "#fab387"
+yellow = "#f9e2af"
+green = "#a6e3a1"
+teal = "#94e2d5"
+sky = "#89dceb"
+sapphire = "#74c7ec"
+blue = "#89b4fa"
+lavender = "#b4befe"
+text = "#cdd6f4"
+subtext1 = "#bac2de"
+subtext0 = "#a6adc8"
+overlay2 = "#9399b2"
+overlay1 = "#7f849c"
+overlay0 = "#6c7086"
+surface2 = "#585b70"
+surface1 = "#45475a"
+surface0 = "#313244"
+base = "#1e1e2e"
+mantle = "#181825"
+crust = "#11111b"
+
+[[blocks]]
+type = 'prompt'
+alignment = 'left'
+newline = true
+
+[[blocks.segments]]
+type = 'os'
+style = 'plain'
+foreground = "p:text"
+
+# [[blocks.segments]]
+# type = "text"
+# style = "plain"
+# foreground = "p:teal"
+# template = "{{ .HostName }} "
+
+[[blocks.segments]]
+type = 'path'
+style = 'plain'
+foreground = 'p:blue'
+background = 'transparent'
+template = '{{ .Path }}'
+
+[blocks.segments.properties]
+style = 'full'
+
+[[blocks.segments]]
+type = 'git'
+style = 'plain'
+foreground = 'p:mauve'
+background = 'transparent'
+# template = ' {{ .UpstreamIcon }}{{ .HEAD }}{{ if or (.Working.Changed) (.Staging.Changed) }}*{{ end }} <p:teal>{{ if gt .Behind 0 }}↓{{ end }}{{ if gt .Ahead 0 }}↑{{ end }}</p:teal>'
+template = " {{ .UpstreamIcon }}{{ .HEAD }}{{if .BranchStatus }} {{ .BranchStatus }}{{ end }}{{ if .Working.Changed }}  {{ .Working.String }}{{ end }}{{ if and (.Working.Changed) (.Staging.Changed) }} |{{ end }}{{ if .Staging.Changed }}  {{ .Staging.String }}{{ end }}{{ if gt .StashCount 0 }}  {{ .StashCount }}{{ end }}"
+
+[blocks.segments.properties]
+branch_icon = ''
+commit_icon = '@'
+fetch_status = true
+fetch_upstream_icon = true
+source = "cli"
+
+[[blocks]]
+type = 'prompt'
+alignment = 'right'
+
+[[blocks.segments]]
+type = "go"
+style = "powerline"
+powerline_symbol = ""
+foreground = "#ffffff"
+background = "#7FD5EA"
+template = "  {{ .Full }} "
+
+[[blocks.segments]]
+type = 'executiontime'
+style = 'plain'
+foreground = 'p:yellow'
+background = 'transparent'
+template = '{{ div .Ms 1000 }}s'
+
+[blocks.segments.properties]
+threshold = 500
+style = ''
+
+[[blocks]]
+type = 'prompt'
+alignment = 'left'
+newline = true
+
+[[blocks.segments]]
+type = 'text'
+style = 'plain'
+foreground_templates = [
+  '{{if eq .Code 0}}p:teal{{end}}',
+  '{{if gt .Code 0}}p:red{{end}}',
+]
+background = 'transparent'
+template = '❯'
+
+[transient_prompt]
+foreground_templates = [
+  '{{if eq .Code 0}}p:teal{{end}}',
+  '{{if gt .Code 0}}p:red{{end}}',
+]
+background = 'transparent'
+template = '❯ '
+
+[secondary_prompt]
+foreground = 'p:teal'
+background = 'transparent'
+template = '❯❯ '
+
+
+# Tooltips
+[[tooltips]]
+type = "kubectl"
+tips = ["kubectl", "k", "helm"]
+style = "diamond"
+foreground = "p:blue"
+background = "p:surface0"
+leading_diamond = ""
+trailing_diamond = ""
+template = "󰠳 {{ .Context }}{{ if .Namespace }} {{ .Namespace }}{{ end }}"
+
+[[tooltips]]
+type = "argo"
+tips = ["argo"]
+style = "diamond"
+foreground = "p:peach"
+background = "p:surface0"
+leading_diamond = ""
+trailing_diamond = ""
+template = " {{ .Name }}{{ .Server }}{{ .User }}"
