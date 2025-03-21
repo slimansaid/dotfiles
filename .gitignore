@@ -36,3 +36,5 @@ node_modules/
 
 # Ignore other unnecessary files
 tags
+
+*_bak
