@@ -1,0 +1,19 @@
+[core]
+  editor = vim
+  autocrlf = input
+
+[pull]
+  rebase = true
+
+[color]
+  ui = auto
+
+[includeIf "gitdir:~/projects/github/"]
+  path = ~/.config/git/config_github
+
+[includeIf "gitdir:~/dotfiles/"]
+  path = ~/.config/git/config_github
+
+[includeIf "gitdir:~/projects/vo/"]
+  path = ~/.config/git/config_vo
+
