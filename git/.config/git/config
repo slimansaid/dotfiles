@@ -2,6 +2,9 @@
   editor = vim
   autocrlf = input
 
+[push]
+  autoSetupRemote = true
+
 [pull]
   rebase = true
 
