@@ -86,7 +86,7 @@ eval "$(zoxide init zsh)"
 
 # environment variables
 export TERM=xterm-256color
-
+export K9S_CONFIG_DIR=~/.config/k9s
 # Load custom scripts and configurations
 if [ -f ~/.zsh_aliases ]; then
   source ~/.zsh_aliases
@@ -99,3 +99,10 @@ fi
 if [ -f ~/scripts/vo_functions.sh ]; then
   source ~/scripts/vo_functions.sh
 fi
+
+# bun completions
+[ -s "~/.bun/_bun" ] && source "~/.bun/_bun"
+
+# bun
+export BUN_INSTALL="$HOME/.bun"
+export PATH="$BUN_INSTALL/bin:$PATH"

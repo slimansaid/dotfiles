@@ -32,6 +32,9 @@ syntax on
 " Add numbers to each line on the left-hand side.
 set number
 
+" Add relative numbers to each line on the left-hand side.
+set relativenumber
+
 " Highlight cursor line underneath the cursor horizontally.
 set cursorline
 
@@ -45,7 +48,7 @@ set tabstop=2 shiftwidth=2 expandtab
 set history=1000
 
 " Show color column at 80 characters width, visual reminder of keepingcode line within a popular line width.
-set colorcolumn=80
+" set colorcolumn=80
 
 "Wraps text instead of forcing a horizontal scroll
 set wrap
