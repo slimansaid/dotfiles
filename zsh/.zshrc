@@ -34,6 +34,11 @@ zinit snippet OMZP::autoenv
 zinit snippet OMZP::eza
 zinit snippet OMZP::ansible
 zinit snippet OMZP::kubectl
+zinit snippet OMZP::bun
+zinit snippet OMZP::mise
+zinit snippet OMZP::fzf
+zinit snippet OMZP::zoxide
+zinit snippet OMZP::k9s
 zinit snippet OMZP::command-not-found
 
 # Load completions
@@ -73,20 +78,11 @@ alias kctx="kubectx"
 alias c="clear"
 alias cd="z"
 
-# Shell integrations
-eval "$(fzf --zsh)"
-eval "$(/opt/homebrew/bin/mise activate zsh)"
-
 # Set the prompt
 if [ "$TERM_PROGRAM" != "Apple_Terminal" ]; then
   eval "$(oh-my-posh init zsh --config ~/.config/ohmyposh.toml)"
 fi
 
-eval "$(zoxide init zsh)"
-
-# environment variables
-export TERM=xterm-256color
-export K9S_CONFIG_DIR=~/.config/k9s
 # Load custom scripts and configurations
 if [ -f ~/.zsh_aliases ]; then
   source ~/.zsh_aliases
@@ -100,9 +96,18 @@ if [ -f ~/scripts/vo_functions.sh ]; then
   source ~/scripts/vo_functions.sh
 fi
 
-# bun completions
-[ -s "~/.bun/_bun" ] && source "~/.bun/_bun"
+# environment variables
+export TERM=xterm-256color
+export K9S_CONFIG_DIR=~/.config/k9s
 
 # bun
 export BUN_INSTALL="$HOME/.bun"
 export PATH="$BUN_INSTALL/bin:$PATH"
+
+# Added by LM Studio CLI (lms)
+export PATH="$PATH:~/.lmstudio/bin"
+# End of LM Studio CLI section
+
+### MANAGED BY RANCHER DESKTOP START (DO NOT EDIT)
+export PATH="~/.rd/bin:$PATH"
+### MANAGED BY RANCHER DESKTOP END (DO NOT EDIT)
