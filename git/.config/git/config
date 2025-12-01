@@ -20,3 +20,5 @@
 [includeIf "gitdir:~/projects/vo/"]
   path = ~/.config/git/config_vo
 
+[includeIf "gitdir:~/projects/poa/"]
+  path = ~/.config/git/config_poa
