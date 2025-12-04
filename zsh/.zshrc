@@ -34,11 +34,11 @@ zinit snippet OMZP::autoenv
 zinit snippet OMZP::eza
 zinit snippet OMZP::ansible
 zinit snippet OMZP::kubectl
-zinit snippet OMZP::bun
 zinit snippet OMZP::mise
 zinit snippet OMZP::fzf
 zinit snippet OMZP::zoxide
 zinit snippet OMZP::k9s
+zinit snippet OMZP::opentofu
 zinit snippet OMZP::command-not-found
 
 # Load completions
@@ -75,7 +75,6 @@ zstyle ':fzf-tab:complete:cd:*' fzf-preview 'eza -1 --icons --color=always $real
 # aliases
 alias kns="kubens"
 alias kctx="kubectx"
-alias c="clear"
 alias cd="z"
 
 # Set the prompt
@@ -100,14 +99,3 @@ fi
 export TERM=xterm-256color
 export K9S_CONFIG_DIR=~/.config/k9s
 
-# bun
-export BUN_INSTALL="$HOME/.bun"
-export PATH="$BUN_INSTALL/bin:$PATH"
-
-# Added by LM Studio CLI (lms)
-export PATH="$PATH:~/.lmstudio/bin"
-# End of LM Studio CLI section
-
-### MANAGED BY RANCHER DESKTOP START (DO NOT EDIT)
-export PATH="~/.rd/bin:$PATH"
-### MANAGED BY RANCHER DESKTOP END (DO NOT EDIT)
