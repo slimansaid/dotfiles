@@ -33,7 +33,7 @@ brew 'mise'
 brew 'ansible'
 brew 'opentofu'
 brew 'terraform'
-brew 'vault'
+brew 'vault-cli'
 brew 'buildkit'
 
 # utility
