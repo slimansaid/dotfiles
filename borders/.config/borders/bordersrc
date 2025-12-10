@@ -1,0 +1,17 @@
+#!/usr/bin/env bash
+
+# Catppuccin colors
+blue="0xff8aadf4"
+red="0xffed8796"
+orange="0xfff5a97f"
+transparent="0x00000000"
+
+options=(
+  active_color="$blue"
+  inactive_color="$transparent"
+  hidpi=on
+  style=round
+  width=10.0
+)
+
+borders "${options[@]}"
