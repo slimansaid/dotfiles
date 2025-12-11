@@ -39,6 +39,7 @@ brew 'buildkit'
 # utility
 brew 'borders' if OS.mac?
 brew 'htop'
+brew 'poppler'
 
 # casks
 cask 'firefox'
