@@ -77,6 +77,7 @@ alias kns="kubens"
 alias kctx="kubectx"
 alias cd="z"
 alias y="yazi"
+alias dotfiles="cd ~/dotfiles && git pull"
 
 # Set the prompt
 if [ "$TERM_PROGRAM" != "Apple_Terminal" ]; then
