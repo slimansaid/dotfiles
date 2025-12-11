@@ -4,7 +4,7 @@ final_space = true
 enable_cursor_positioning = true
 
 [upgrade]
-notice = true
+notice = false 
 interval = "168h"
 auto = false
 source = "cdn"
