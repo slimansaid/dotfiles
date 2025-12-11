@@ -76,6 +76,7 @@ zstyle ':fzf-tab:complete:cd:*' fzf-preview 'eza -1 --icons --color=always $real
 alias kns="kubens"
 alias kctx="kubectx"
 alias cd="z"
+alias y="yazi"
 
 # Set the prompt
 if [ "$TERM_PROGRAM" != "Apple_Terminal" ]; then
