@@ -40,6 +40,8 @@ brew 'buildkit'
 brew 'borders' if OS.mac?
 brew 'htop'
 brew 'poppler'
+brew 'sops'
+brew 'git-crypt'
 
 # casks
 cask 'firefox'

@@ -22,3 +22,5 @@
 
 [includeIf "gitdir:~/projects/poa/"]
   path = ~/.config/git/config_poa
+[init]
+	defaultBranch = main
