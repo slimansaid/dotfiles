@@ -101,3 +101,8 @@ fi
 export TERM=xterm-256color
 export K9S_CONFIG_DIR=~/.config/k9s
 
+if [[ $(uname) == "Linux" ]]; then
+  export HOSTNAME=$(hostname)
+  keychain -q $HOME/.ssh/gitlab $HOME/.ssh/github
+  source $HOME/.keychain/$HOSTNAME-sh
+fi
